@@ -4,9 +4,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alpine Todo</title>
+    <meta name="title" content="Alpine Todo" />
+    <meta
+      name="description"
+      content="A simple todo app buit with alpine js and persist todos to localstorage"
+    />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script/persist.min.js"></script>
     <script defer src="script/alpine.min.js"></script>
+    <!-- For all browsers -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+
+    <!-- For Google and Android -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="assets/favicon-48x48.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/favicon-192x192.png"
+    />
+
+    <!-- For iPad -->
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="167x167"
+      href="assets/favicon-167x167.png"
+    />
+    <!-- For iPhone -->
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="180x180"
+      href="assets/favicon-180x180.png"
+    />
+    <meta property="og:title" content="Alpine Todo" />
+    <meta
+      property="og:description"
+      content="A simple todo app buit with alpine js and persist todos to localstorage"
+    />
+    <meta
+      property="og:url"
+      content="https://hrishiksh.github.io/alpine-todo/"
+    />
+    <meta
+      property="og:image"
+      content="https://hrishiksh.github.io/alpine-todo/assets/alpine-og.webp"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://hrishiksh.github.io/alpine-todo/assets/alpine-og.webp"
+    />
+    <meta name="twitter:title" content="Alpine Todo" />
+    <meta
+      name="twitter:description"
+      content="A simple todo app buit with alpine js and persist todos to localstorage"
+    />
   </head>
   <body>
     <main>
@@ -16,7 +86,7 @@
           <template x-for="(t,index) in todo">
             <li class="todo-item">
               <span class="todo-delete" @click="todo.splice(index,1)"
-                ><img src="trash.svg" alt="trash icon" /></span
+                ><img src="assets/trash.svg" alt="trash icon" /></span
               ><span x-text="t"></span>
             </li>
           </template>
