@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpine Todo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="/script/persist.min.js"></script>
+    <script defer src="/script/alpine.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Alpine Todo</h1>
+      <section class="todo-box" x-data="{todo: $persist([])}">
+        <ul>
+          <template x-for="(t,index) in todo">
+            <li class="todo-item">
+              <span class="todo-delete" @click="todo.splice(index,1)"
+                ><img src="/trash.svg" alt="trash icon" /></span
+              ><span x-text="t"></span>
+            </li>
+          </template>
+        </ul>
+        <div class="input">
+          <input type="text" x-ref="textinput" placeholder="What to do next?" />
+          <button
+            @click="todo.push($refs.textinput.value);$refs.textinput.value=''"
+          >
+            Add
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

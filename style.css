@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Public Sans";
+}
+
+:root {
+  font-size: 62.5%;
+  --border-color: #ccd5ae;
+  --background-color: #e9edc9;
+  --background-color-light: #fefae0;
+}
+
+/* public-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/public-sans-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* public-sans-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/public-sans-v15-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* public-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/public-sans-v15-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+main {
+  max-width: min(768px, calc(100% - 2rem));
+  margin: 10rem auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.todo-box {
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem 0rem;
+  background-color: var(--background-color);
+}
+
+.todo-box li {
+  list-style: none;
+  font-size: 1.6rem;
+  padding: 0.5rem 0rem;
+}
+
+.todo-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.todo-delete {
+  padding: 0.8rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-delete:hover {
+  background-color: var(--background-color-light);
+}
+
+.input {
+  display: flex;
+  padding: 2rem 0rem 0rem;
+  gap: 1rem;
+}
+
+.input input {
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  width: 100%;
+  background-color: var(--background-color-light);
+  outline: none;
+}
+
+.input input:focus {
+  outline: 1px solid var(--border-color);
+}
+
+.input button {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color-light);
+  cursor: pointer;
+}
+
+.input button:active {
+  background-color: var(--background-color);
+  outline: 1px solid var(--border-color);
+}
+
+@media screen and (max-width: 640px) {
+  main {
+    margin: 2rem auto;
+  }
+}
